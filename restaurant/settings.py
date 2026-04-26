@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "catalog",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "catalog.context_processors.cfg_assets_root",
             ],
         },
     },
@@ -117,4 +119,12 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 AUTH_USER_MODEL = "catalog.Cooker"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+ASSETS_ROOT = "/static/assets"
